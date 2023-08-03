@@ -42,6 +42,7 @@ body{
     position: absolute;
     text-transform: uppercase;
     color: #c2c2c2;
+    backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -49,6 +50,9 @@ body{
     letter-spacing: 10px;
     font-weight: 700;
     font-size: 50px;
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
 }
 
 .heading-primary-sub{
@@ -57,4 +61,39 @@ body{
     font-weight: 500;
     font-size: 20px;
     text-align: center;
+    animation-name: slideDown;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+@keyframes slideUp{
+    0%{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    80%{
+        transform: translateY(-5px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    80%{
+        transform: translateY(-5px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
